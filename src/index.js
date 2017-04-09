@@ -1,8 +1,10 @@
 const Koa = require('koa');
 const HashManager = require('./hashManager');
+const { DEFAULT_PORT } = reuqire('./constants');
 
 const app = new Koa();
 const hashManager = new HashManager();
+
 
 // Logging
 app.use(async (ctx) => {
@@ -13,4 +15,4 @@ app.use(async (ctx) => {
   }
 });
 
-app.listen(3001);
+app.listen(DEFAULT_PORT);

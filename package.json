@@ -9,7 +9,7 @@
   "author": "Chris Hitchcott <hitchcott@gmail.com> (http://hitchcott.com)",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@digix/ipfs-pinning-registry": "0.0.1",
+    "@digix/ipfs-pinning-registry": "0.0.2",
     "@digix/truffle-lightwallet-provider": "0.0.11",
     "ethereumjs-util": "^5.1.1",
     "ipfs-api": "^14.0.0",
