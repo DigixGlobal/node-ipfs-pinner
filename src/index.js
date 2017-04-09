@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const HashManager = require('./hashManager');
-const { DEFAULT_PORT } = reuqire('./constants');
+const { DEFAULT_PORT } = require('./constants');
 
 const app = new Koa();
 const hashManager = new HashManager();
