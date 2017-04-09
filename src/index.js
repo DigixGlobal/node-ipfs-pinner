@@ -5,16 +5,12 @@ const app = new Koa();
 const hashManager = new HashManager();
 
 // Logging
-app.use(async (ctx, next) => {
+app.use(async (ctx) => {
   const { i, t, s } = ctx.request.query;
   if (i && t && s) {
-    await hashManager.processMessage({ ipfsHash: i, timestamp: t, signature: s });
+    const tx = await hashManager.processMessage({ ipfsHash: i, timestamp: t, signature: s });
+    ctx.body = tx;
   }
-  await next();
 });
 
-app.use((ctx) => {
-  ctx.body = 'Hello World';
-});
-
-app.listen(3000);
+app.listen(3001);

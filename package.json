@@ -12,6 +12,7 @@
     "@digix/ipfs-pinning-registry": "0.0.1",
     "@digix/truffle-lightwallet-provider": "0.0.11",
     "ethereumjs-util": "^5.1.1",
+    "ipfs-api": "^14.0.0",
     "koa": "^2.2.0",
     "multi-hash": "^0.1.1",
     "web3": "^0.18.4"

@@ -30,18 +30,13 @@ class HashManager {
     });
   }
   async processMessage(message) {
-    const { decodedIpfsHash, ipfsHash, address, timestamp } = decode(message);
-    // TODO validate ipfs hash
-    // TODO check if already pinned
-    // if (timestamp < new Date().getTime() - (60 * 1000)) { throw new Error('Too old'); }
+    const { decodedIpfsHash, address, timestamp } = decode(message);
+    if (timestamp < new Date().getTime() - (60 * 1000)) { throw new Error('Too old'); }
     const isUser = await this.blockchain.getUser.call(address);
     if (!isUser) { throw new Error('User is not registered'); }
-    // TODO do the actual pinning
-    // return after this is succesful....
     const tx = await this.blockchain.setHash.sendTransaction(decodedIpfsHash, true);
-    console.log(`Broadcasting ${ipfsHash} - ${tx}`);
+    return tx;
   }
-
 }
 
 module.exports = HashManager;
